@@ -19,6 +19,6 @@ public class cutomer {
 	}
 
 	public void setProducts(Map<Integer, String> products) {
-		this.products = products;
+		this.products = (Map<Integer, String>) products;
 	}
 }
