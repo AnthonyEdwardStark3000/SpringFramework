@@ -1,5 +1,8 @@
 package com.Mr_stark.spring.springmvcorm.user.services;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +29,12 @@ public class UserServiceImpl implements UserService {
 	public int save(User user) {
 		//Business logic
 		return dao.create(user);
+	}
+
+	@Override
+	public List<User> getUsers() {
+		List<User> users = dao.findUsers();
+		Collections.sort(users);
+		return users;
 	}
 }
